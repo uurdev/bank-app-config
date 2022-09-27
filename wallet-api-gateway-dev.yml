@@ -10,7 +10,7 @@ eureka:
 
 spring:
    application:
-      name: restaurant-gateway-service
+      name: wallet-api-gateway
    cloud:
       gateway:
       discovery:
