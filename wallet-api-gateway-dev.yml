@@ -16,11 +16,6 @@ spring:
       discovery:
          locator:
             enabled: true
-      routes:
-         - id: customers
-            uri: lb://wallet-customer-service
-            predicates:
-            - Path=/customer/**
 management:
    endpoint:
       gateway:
