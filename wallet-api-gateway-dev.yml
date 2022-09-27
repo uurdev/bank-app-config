@@ -1,0 +1,23 @@
+server:
+  port: 5000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+    instance:
+      preferIdAddress: true
+
+spring:
+   application:
+      name: restaurant-gateway-service
+   cloud:
+      gateway:
+      discovery:
+         locator:
+            enabled: true
+      routes:
+         - id: customers
+            uri: lb://wallet-customer-service
+            predicates:
+            - Path=/customer/**
