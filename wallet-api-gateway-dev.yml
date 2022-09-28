@@ -17,10 +17,10 @@ spring:
          locator:
             enabled: true
       routes:
-      - id: walletCustomer
-        uri: http:localhost:4000
+      - id: customerModule
+        uri: http://localhost:4000/
         predicates:
-        - Path: /customers/**
+        - Path=/customers/**
 management:
    endpoint:
       gateway:
