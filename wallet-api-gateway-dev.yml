@@ -18,15 +18,4 @@ spring:
           uri: http://localhost:4002/
           predicates:
             - Path=/customers/**
-        - id: second-microservice
-          uri: http://localhost:8082/
-          predicates:
-            - Path=/second/**
-management:
-   endpoint:
-      gateway:
-         enabled: true
-   endpoints:
-      web:
-         exposure:
-            include: gateway
+
