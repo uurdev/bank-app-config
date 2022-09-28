@@ -15,7 +15,7 @@ spring:
     gateway:
       routes:
         - id: wallet-customer-service
-          uri: lb://WALLET-CUSTOMER-SERVICE
+          uri: lb://WALLET-CUSTOMER-SERVICE/
           predicates:
             - Path=/customers/**
 
