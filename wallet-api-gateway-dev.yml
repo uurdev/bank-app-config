@@ -1,5 +1,5 @@
 server:
-  port: 8887
+  port: 8888
 
 eureka:
   client:
@@ -15,7 +15,9 @@ spring:
     gateway:
       routes:
         - id: wallet-customer-service
-          uri: lb://WALLET-CUSTOMER-SERVICE/
+          uri: lb://wallet-customer-service
           predicates:
             - Path=/customers/**
+          filters:
+            - RewritePath=/customers(?<segment>/?.*),$\{segment}
 
