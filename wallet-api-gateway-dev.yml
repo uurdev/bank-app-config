@@ -16,6 +16,11 @@ spring:
       discovery:
          locator:
             enabled: true
+      routes:
+      - id: walletCustomer
+        uri: http:localhost:4000
+        predicates:
+        - path: /customers
 management:
    endpoint:
       gateway:
