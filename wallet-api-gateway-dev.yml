@@ -20,7 +20,7 @@ spring:
       - id: walletCustomer
         uri: http:localhost:4000
         predicates:
-        - path: /customers
+        - Path: /customers/**
 management:
    endpoint:
       gateway:
