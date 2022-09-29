@@ -20,4 +20,9 @@ spring:
             - Path=/customers/**
           filters:
             - RewritePath=/customers(?<segment>/?.*),$\{segment}
-
+        - id: wallet-account-service
+          uri: lb://wallet-account-service
+          predicates:
+            - Path=/account/**
+          filters:
+            - RewritePath=/customers(?<segment>/?.*),$\{segment}
