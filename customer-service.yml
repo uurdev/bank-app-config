@@ -10,4 +10,4 @@ eureka:
 
 spring:
    application:
-      name: wallet-customer-service
+      name: customer-service

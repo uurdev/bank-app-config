@@ -10,19 +10,19 @@ eureka:
 
 spring:
   application:
-    name: wallet-api-gateway
+    name: api-gateway
   cloud:
     gateway:
       routes:
-        - id: wallet-customer-service
-          uri: lb://wallet-customer-service
+        - id: customer-service
+          uri: lb://customer-service
           predicates:
             - Path=/customers/**
           filters:
             - RewritePath=/customers(?<segment>/?.*),$\{segment}
-        - id: wallet-account-service
-          uri: lb://wallet-account-service
+        - id: product-service
+          uri: lb://product-service
           predicates:
-            - Path=/account/**
+            - Path=/product/**
           filters:
             - RewritePath=/customers(?<segment>/?.*),$\{segment}
