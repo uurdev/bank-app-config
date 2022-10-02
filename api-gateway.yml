@@ -23,6 +23,12 @@ spring:
         - id: product-service
           uri: lb://product-service
           predicates:
-            - Path=/product/**
+            - Path=/products/**
           filters:
-            - RewritePath=/customers(?<segment>/?.*),$\{segment}
+            - RewritePath=/products(?<segment>/?.*),$\{segment}
+        - id: order-management-service
+          uri: lb://order-management-service
+          predicates:
+            - Path=/order-managements/**
+          filters:
+            - RewritePath=/order-management(?<segment>/?.*),$\{segment}
