@@ -19,8 +19,12 @@ spring:
     pathmatch:
       matching-strategy: ant_path_matcher
    cloud:
-     consul:
-       discovery:
-         instance-id : customer-service
-         healthCheckPath: health
-         healthCheckInterval: 15s
+    consul:
+      discovery:
+        prefer-ip-address: true
+      host: 127.0.0.1
+      port: 8500
+      config:
+        enabled: true
+        watch:
+          enabled: true
