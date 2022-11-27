@@ -28,3 +28,6 @@ spring:
         enabled: true
         watch:
           enabled: true
+      healthCheckPath: /actuator/health
+      healthCheckInterval: 15s
+      healthCheckTimeout: 15s
